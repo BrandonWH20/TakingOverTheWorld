@@ -8,6 +8,7 @@ def pull_ema():
     return info
 
 
+
 def grab_recent_ema(data):
     key1 = str(sorted(data.keys())[1])
     sub_data = data[key1]
