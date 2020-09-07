@@ -16,7 +16,7 @@ requestD = "https://www.alphavantage.co/query?function=func1&symbol=Ticker&" \
           "interval=intervalV&time_period=timeP&series_type=open&apikey=KEYA"
 
 # Brandon's Key for Alpha Vantage.. Totally should not be here...
-key = str("2U2M12W6VQ47QS0J")
+key = str("demo")
 
 
 
