@@ -1,24 +1,29 @@
 import json
 import requests
 import pickle
+
 #
 
-# TODO: write a program that Buys a stock when the RSI goes from <32 to >54 within 24 hours.
+# TODO:
 
 # How to use:
 # Data = pull_[Technical Indicator]
+
 # #Will return a variable called Data with a dictionary of values.
-
-
 
 # Create string request
 requestD = "https://www.alphavantage.co/query?function=func1&symbol=Ticker&" \
           "interval=intervalV&time_period=timeP&series_type=open&apikey=KEYA"
 
-#   Pull_rsi(stockname), returns a dictionary.
-def pull_rsi(ticker="TSLA", interval="30min", period="10"):
-    # RETURNS A DICTIONARY OBJ
+# Brandon's Key for Alpha Vantage.. Totally should not be here...
+key = str("2U2M12W6VQ47QS0J")
 
+
+
+#   Pull_rsi(stockname), returns a dictionary.
+def pull_rsi(ticker, interval, period):
+    # RETURNS A DICTIONARY OBJ
+    print(ticker)
     key = str("2U2M12W6VQ47QS0J")
 
     # Create string request
@@ -37,7 +42,7 @@ def pull_rsi(ticker="TSLA", interval="30min", period="10"):
     return json.loads(data.text)
 
 
-def pull_sma(ticker="TSLA", interval="30min", period="10"):
+def pull_sma(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
     key = str("2U2M12W6VQ47QS0J")
@@ -55,10 +60,10 @@ def pull_sma(ticker="TSLA", interval="30min", period="10"):
 
     return json.loads(data.text)
 
-def pull_macd(ticker="TSLA", interval="30min", period="10"):
+def pull_macd(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
-    key = str("2U2M12W6VQ47QS0J")
+    key = str("XFNGKVE4T5SMOQTG")
     request = requestD
 
     # place in ticker, interval and period
@@ -85,20 +90,6 @@ def print_rsid(data):
     # prints all of the RSI values
     lis = get_rsil(data)
     print(lis)
-
-
-# returns a list with raw rsi values.
-def get_rsil(data):
-    dtl = list(data['Technical Analysis: RSI'])
-    ls = []
-
-    # for every object in the date list, append the corresponding RSI value.
-    for d in dtl:
-        # append raw RSI value
-        ls.append((data['Technical Analysis: RSI'][d]['RSI']))
-
-    return list(map(float, ls))
-
 
 #  A function that returns the lowest of the past x values given a list amd index number return 999 if failed
 def find_low(ls, indx=0, last=0):
@@ -223,11 +214,6 @@ def save(data, name):
     print("Saved")
     return
 
-
-#TODO: Implement ML
-
-
-
 # function tha loads previously saved file.
 def load(name):
     file = name + ".pickle"
@@ -235,3 +221,6 @@ def load(name):
     pickle_in = open(file, "rb")
 
     return pickle.load(pickle_in)
+
+
+
