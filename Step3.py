@@ -24,7 +24,7 @@ key = str("demo")
 def pull_rsi(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
     print(ticker)
-    key = str("2U2M12W6VQ47QS0J")
+
 
     # Create string request
     request = requestD
@@ -45,7 +45,7 @@ def pull_rsi(ticker, interval, period):
 def pull_sma(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
-    key = str("2U2M12W6VQ47QS0J")
+  
     request = requestD
 
     # place in ticker, interval and period
@@ -63,7 +63,7 @@ def pull_sma(ticker, interval, period):
 def pull_macd(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
-    key = str("XFNGKVE4T5SMOQTG")
+   
     request = requestD
 
     # place in ticker, interval and period
