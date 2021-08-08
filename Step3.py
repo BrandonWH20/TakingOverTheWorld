@@ -1,6 +1,7 @@
 import json
-import requests
 import pickle
+
+import requests
 
 #
 
@@ -16,7 +17,7 @@ requestD = "https://www.alphavantage.co/query?function=func1&symbol=Ticker&" \
           "interval=intervalV&time_period=timeP&series_type=open&apikey=KEYA"
 
 # Brandon's Key for Alpha Vantage.. Totally should not be here...
-key = str("demo")
+key = str("2U2M12W6VQ47QS0J")
 
 
 
@@ -24,7 +25,7 @@ key = str("demo")
 def pull_rsi(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
     print(ticker)
-
+    key = str("2U2M12W6VQ47QS0J")
 
     # Create string request
     request = requestD
@@ -45,7 +46,7 @@ def pull_rsi(ticker, interval, period):
 def pull_sma(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
-  
+    key = str("2U2M12W6VQ47QS0J")
     request = requestD
 
     # place in ticker, interval and period
@@ -63,7 +64,7 @@ def pull_sma(ticker, interval, period):
 def pull_macd(ticker, interval, period):
     # RETURNS A DICTIONARY OBJ
 
-   
+    key = str("XFNGKVE4T5SMOQTG")
     request = requestD
 
     # place in ticker, interval and period
@@ -159,7 +160,6 @@ def buy_it_high(data, hours = 26, low = 30, high = 55):
 
 
 # Given dictionary, print the date if RSI goes from >55 to < 32 in the last 13 trading hours.
-
 def buy_it_low(data, hours = 26, rhigh = 55, low = 32):
     # Should we be able to buy a stock if we already have a position? but only twice within 3 hours.
 

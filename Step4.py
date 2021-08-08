@@ -1,6 +1,3 @@
-import json
-import requests
-
 """ TODO: write a program that Buys a stock when the RSI goes from <32 to >54 within 24 hours.  """
 
 # What do you love 0
